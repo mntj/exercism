@@ -19,11 +19,12 @@ class GigasecondTest < MiniTest::Unit::TestCase
     gs = Gigasecond.from(Date.new(1959, 7, 19))
     assert_equal Date.new(1991, 3, 27), gs
   end
-
+  # Not sure if I should change this or not...
   def test_yourself
-    your_birthday = Date.new(year, month, day)
+    your_birthday = Date.new(1990, 06, 16)
     gs = Gigasecond.from(your_birthday)
-    assert_equal Date.new(2009, 1, 31), gs
+    # 2/22/22!!!!! :D
+    assert_equal Date.new(2022, 2, 22), gs
   end
 
 end
