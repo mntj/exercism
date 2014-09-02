@@ -1,6 +1,5 @@
 class Hamming
   def self.compute(strand1, strand2)
-    # Initialize Hamming, iterator variables
     hamming_distance = 0
 
     # Turn each strand into an array
