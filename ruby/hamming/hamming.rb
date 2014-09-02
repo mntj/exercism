@@ -16,12 +16,9 @@ class Hamming
 
     # Iterate through strand1, incrementing
     # the Hamming distance with each inequality
-    strand1.each do |x|
-      if x != strand2[i]
-        hamming_distance += 1
-      end
-      i += 1
-    end
+    strand1.each_with_index { |char, idx|
+      if char != strand2[idx] then hamming_distance += 1 end
+    }
 
     return hamming_distance
   end
