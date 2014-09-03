@@ -1,10 +1,11 @@
 require 'prime'
 class Raindrops
   def self.convert(num)
+    return num.to_s if num < 2
     i = 2
     quotient = num
     prime_factors = []
-    return num.to_s if num < 2
+
     until prime_factors.inject(:*) === num do
       if quotient % i === 0 && i.prime?
         prime_factors << i
