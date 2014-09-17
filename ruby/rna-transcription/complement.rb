@@ -7,7 +7,7 @@ class Complement
       'T' => 'A',
       'A' => 'U'
     }
-    dna_string.chars.each {|x| rna_string += complements[x]}
+    dna_string.chars.map {|x| rna_string += complements[x]}
     return rna_string
   end
 
@@ -19,7 +19,7 @@ class Complement
       'A' => 'T',
       'U' => 'A'
     }
-    rna_string.chars.each {|x| dna_string += complements[x]}
+    rna_string.chars.map {|x| dna_string += complements[x]}
     return dna_string
   end
 end
