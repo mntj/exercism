@@ -34,7 +34,6 @@ class Raindrops
         rain_drops[i] = 'Plong'
       end
     end
-
-    return rain_drops.join
+    rain_drops.join
   end
 end
