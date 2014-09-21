@@ -1,4 +1,8 @@
 class Complement
+  @da_funk = ->(f,g) { f.chars.map {
+      |x| g[x]
+    }.join
+  }
   def self.of_dna(dna_string)
     complements = {
       'G' => 'C',
@@ -6,7 +10,7 @@ class Complement
       'T' => 'A',
       'A' => 'U'
     }
-    dna_string.chars.map {|x| complements[x]}.join
+    @da_funk.call(dna_string, complements)
   end
 
   def self.of_rna(rna_string)
@@ -16,6 +20,6 @@ class Complement
       'A' => 'T',
       'U' => 'A'
     }
-    rna_string.chars.map {|x| complements[x]}.join
+    @da_funk.call(rna_string, complements)
   end
 end
