@@ -1,6 +1,14 @@
 class Year
+  def self.divisible_by_400?(yr)
+    (yr % 400).zero?
+  end
+  def self.divisible_by_100?(yr)
+    (yr % 100).zero?
+  end
+  def self.divisible_by_4?(yr)
+    (yr % 4).zero?
+  end
   def self.leap?(year)
-   return false unless year % 4 == 0 && year % 100 != 0 || year % 400 === 0
-   return true
+    divisible_by_4?(year) && !divisible_by_100?(year) || divisible_by_400?(year)
   end
 end
