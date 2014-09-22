@@ -5,15 +5,11 @@ class Squares
   end
 
   def square_of_sums
-    sum = 0
-    1.upto(@num) {|n| sum += n}
-    return sum**2
+    1.upto(@num).inject(:+)**2
   end
 
   def sum_of_squares
-    sum = 0
-    1.upto(@num) {|n| sum += n**2}
-    return sum
+    1.upto(@num).map { |x| x**2 }.inject(:+)
   end
 
   def difference
