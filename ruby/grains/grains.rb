@@ -1,8 +1,11 @@
 class Grains
   def board
-    chess_board = [1]
-    (2..64).each_with_index do |n,i|
-      chess_board << chess_board[i]*2
+    unless defined? chess_board
+      chess_board = []
+      (0..64).inject(1) do |m,i|
+        chess_board[i] = m
+        m*2
+      end
     end
     chess_board
   end
@@ -12,6 +15,6 @@ class Grains
   end
 
   def total
-    board.inject(:+)
+    board.last - 1
   end
 end
