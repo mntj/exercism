@@ -1,4 +1,3 @@
-require 'prime'
 class Raindrops
   def self.convert(num)
     string = ''
