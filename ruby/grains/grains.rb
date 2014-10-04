@@ -15,6 +15,6 @@ class Grains
   end
 
   def total
-    board.last - 1
+    board.inject(:+) / 2
   end
 end
