@@ -24,9 +24,11 @@ class Bob
   def ends_with_question_mark?(str)
     str[-1] == '?'
   end
+
   def ends_with_exclamation?(str)
     str[-1] == '!'
   end
+
   def silent?(str)
     str.strip.length == 0
   end
