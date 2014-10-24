@@ -1,20 +1,9 @@
 class Grains
-  def board
-    unless defined? chess_board
-      chess_board = []
-      (0..64).inject(1) do |m,i|
-        chess_board[i] = m
-        m*2
-      end
-    end
-    chess_board
-  end
-
   def square(n)
-    board[n-1]
+    (1..n).inject { |m| m*2 }
   end
 
   def total
-    board.inject(:+) / 2
+    square(65) - 1
   end
 end
