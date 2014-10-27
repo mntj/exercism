@@ -1,9 +1,9 @@
 class Grains
   def square(n)
-    (1..n).inject { |m| m*2 }
+    0b10 << n - 0b10
   end
 
   def total
-    square(65) - 1
+    (0b10 << 0b111111) - 0b1
   end
 end
