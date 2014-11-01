@@ -1,17 +1,10 @@
 class Phrase
   def initialize(raw_str)
-    @words = raw_str.gsub(/[^a-zA-Z0-9']/,' ').split.each do |word|
-      word.strip!
-      word.downcase!
-    end
+    @words = raw_str.gsub(/[^a-zA-Z0-9']/,' ').split.map { |word| word.strip.downcase }
   end
 
   def word_counter(word_arr)
-    counter = {}
-    word_arr.each do |word|
-      counter[word] = word_arr.count(word)
-    end
-    counter
+    word_arr.each_with_object({}) { |word, h| h[word] = word_arr.count(word) }
   end
 
   def word_count
