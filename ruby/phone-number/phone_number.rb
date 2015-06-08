@@ -6,16 +6,24 @@ class PhoneNumber
   attr_reader :str, :nums
 
   def number
-    return '0000000000' if bad_number?
-    nums[0] = '' if trim_first?
-    nums
+    @num ||= phone_number
   end
 
   def area_code
     @code ||= number[0..2]
   end
 
+  def to_s
+    "(#{area_code}) #{number[3..5]}-#{number[6..-1]}"
+  end
+
   private
+
+  def phone_number
+    return '0000000000' if bad_number?
+    nums[0] = '' if trim_first?
+    nums
+  end
 
   def bad_number?
     !length_acceptable? || (length_is_eleven? && !first_is_one?)
