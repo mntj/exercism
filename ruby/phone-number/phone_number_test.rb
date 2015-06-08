@@ -56,7 +56,6 @@ class PhoneNumberTest < Minitest::Test
   end
 
   def test_area_code
-    skip
     number = PhoneNumber.new('1234567890')
     assert_equal '123', number.area_code
   end

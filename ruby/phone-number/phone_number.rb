@@ -11,6 +11,10 @@ class PhoneNumber
     nums
   end
 
+  def area_code
+    @code ||= number[0..2]
+  end
+
   private
 
   def bad_number?
