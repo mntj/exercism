@@ -7,5 +7,5 @@ def to_rna(dna_string):
     }
 
     return "".join(
-        [dna_map[char] for char in dna_string]
+        dna_map[char] for char in dna_string
     )
