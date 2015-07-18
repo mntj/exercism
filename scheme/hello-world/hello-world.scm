@@ -2,6 +2,9 @@
   #:export (hello))
 
 (define hello
-  (lambda ()
-    "Hello, World!"
+  (lambda (x)
+    (if (length x > 0)
+      (append "Hello, " x)
+      ("Hello, World!")
+    )
   ))
